@@ -8,13 +8,9 @@
         select-type="single"
         :data="database.list"
         :pagination="{
-          background: true,
-          small: true,
-          layout: 'total, jumper, prev, pager, next, sizes',
           total: 100,
           pageSize: 10,
           currentPage: 1,
-          pageSizes: [10, 20, 30, 40, 50],
           events: {
             'size-change': sizeChange,
             'current-change': currentChange

@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <test />
+    <pre style="text-align: left">{{fileText}}</pre>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   name: 'HomeView',
   components: {
     test
+  },
+  data() {
+    return {
+      fileText: ''
+    }
   },
   // created() {
   //   const files = require.context('@/components', true, /\.vue$/)
@@ -29,6 +35,7 @@ export default {
     // 读取test.properties
     readTestFile() {
       const file = this.loadFile('./vue/test.vue')
+      this.fileText = file
       console.info(file)
       // console.log(this.unicodeToUtf8(file))
     },

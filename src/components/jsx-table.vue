@@ -1,4 +1,12 @@
 <script lang="jsx">
+// 默认分页属性
+const DEFAULT_PAGINATION_PROPS = {
+  background: true,
+  small: true,
+  layout: 'total, jumper, prev, pager, next, sizes',
+  pageSizes: [10, 20, 30, 40, 50],
+}
+
 import { Fragment } from 'fragment-for-vue'
 // 自定义内容的组件
 const exSlot = {
@@ -109,14 +117,13 @@ export default {
           { order && <el-table-column type="index" label="序号" width="50" /> }
           <loop-columns list={columns} />
         </el-table>
-        {pagination && <el-pagination props={pageProps} on={pageEvents} />}
+        {pagination && <el-pagination props={{ ...DEFAULT_PAGINATION_PROPS, ...pageProps }} on={pageEvents} />}
       </Fragment>
     )
   },
 }
 </script>
 <style lang="less" scoped>
-
 .radio-box {
   border: 1px solid #dcdfe6;
   width: 14px;

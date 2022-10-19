@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>{{ msg }}</div>
-        <el-button>试试</el-button>
+        <el-button>试试看</el-button>
     </div>
 </template>
 <script>
